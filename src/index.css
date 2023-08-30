@@ -13,9 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   min-height: 100vh;
-  padding: 2rem;
   background: #181F2A;
   background: linear-gradient(135deg, #181F2A, #313145);
- 
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+
 }
 

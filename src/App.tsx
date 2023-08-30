@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import  {useEffect} from 'react';
 import './App.css';
-
+import HomePage from './Views/pages/HomePage';
+import * as Sentry from "@sentry/react"
 function App() {
+
+  useEffect(() => {
+    Sentry.init({
+      dsn: process.env["REACT_APP_SENTRY_URI"],
+      integrations: [
+        new Sentry.BrowserTracing({
+          tracePropagationTargets: ["localhost"],
+        }),
+        // new Sentry.Replay(),
+      ],
+      tracesSampleRate: 1.0,
+      replaysSessionSampleRate: 0.1, 
+      replaysOnErrorSampleRate: 1.0,
+    });
+    
+  }, [])
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HomePage/>
   );
 }
 
