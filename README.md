@@ -16,9 +16,7 @@ Everything else is from the usual [React](https://react.dev/) architecture.
 ## NB:
 
 Please note that, this was a fairly simple app which could have been implemented without Redux.
-However, the intention was to treat this project with extensibility in mind so it was structured with all best practices I could possibly think of. This is not to say that this project doesn't need improvement. Also note that sometimes no matter what you type, the API returns with same response
-data. I learned there was a limit of calls for non-patron users(I don't know how true this is).
-Please feel free to point out if I'm using it wrongly. I will appreciate.
+However, the intention was to treat this project with extensibility in mind so it was structured with all best practices I could possibly think of. This is not to say that this project doesn't need improvement.
 
 ## How to setup and run this project
 
