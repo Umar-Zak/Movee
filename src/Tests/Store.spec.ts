@@ -15,7 +15,7 @@ let url: RegExp
 const sampleMovieResarchResponse = [
     {
     Actors: ["Acor 1", "Actor 2"],
-    Awards: "N/A",
+    Rated: "N/A",
     Country: "Ghana",
     Director: "Umar Zak",
     Genre: "Educational",

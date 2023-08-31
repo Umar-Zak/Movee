@@ -8,7 +8,7 @@ export interface SearchQuery {
 // them all necessary to show on the page
 export interface Movie{
     Genre: string
-    Awards: string
+    Rated: string
     Country: string
     Language: string
     Actors: string[]
@@ -17,4 +17,5 @@ export interface Movie{
     Plot: string
     Title: string
     Runtime: string
+    Writer: string
 }

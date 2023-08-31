@@ -9,6 +9,8 @@ const MovieComponent = (movie: Movie) => {
             <Table.Cell>{movie.Language}</Table.Cell>
             <Table.Cell>{movie.Runtime}</Table.Cell>
             <Table.Cell>{movie.Released}</Table.Cell>
+            <Table.Cell>{movie.Writer}</Table.Cell>
+            <Table.Cell>{movie.Rated}</Table.Cell>
         </Table.Row> 
      );
 }

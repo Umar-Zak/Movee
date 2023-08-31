@@ -18,6 +18,8 @@ const SearchResultHeader = () => {
             <Table.ColumnHeaderCell>Language</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Runtime</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Released</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Writer(s)</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Rated</Table.ColumnHeaderCell>
             </Table.Row>
         </Table.Header>
 
