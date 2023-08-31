@@ -30,4 +30,4 @@ When want to build the project instead, run `npm build`
 ## Unit Tests
 
 I have included 2 unit tests in this project to test the state of the app when the API call
-was successfull and when it isn't. To view test results, run `npm start`
+is successfull and when it isn't. To view test results, run `npm start`
