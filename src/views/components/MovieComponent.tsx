@@ -3,7 +3,7 @@ import { Movie } from '../../Service/DTOs';
 
 const MovieComponent = (movie: Movie) => {
     return ( 
-        <Table.Row>
+        <Table.Row className="custom-table__body_row">
             <Table.RowHeaderCell>{movie.Title}</Table.RowHeaderCell>
             <Table.Cell>{movie.Genre}</Table.Cell>
             <Table.Cell>{movie.Language}</Table.Cell>

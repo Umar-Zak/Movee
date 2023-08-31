@@ -39,7 +39,30 @@
   margin-left: 10px;
 }
 
+.custom-table{
+  background: #12181f !important;
+  min-height: 100px;
+}
 
+.custom-table__header_row{
+ color:  #01a29f !important;
+ font-size: 0.9rem;
+ font-weight: 500;
+ letter-spacing: 1.2px;
+ border-bottom: 0.5px solid white;
+ 
+}
+
+.custom-table__body_row{
+  color: white !important;
+ 
+}
+.no-search-result{
+  color: white !important;
+  display: block;
+  text-align: center;
+  font-weight: 400;
+}
 .loader-container{
   width: 100vw;
   height: 100vh;

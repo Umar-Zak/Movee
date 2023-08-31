@@ -1,4 +1,4 @@
-import {Table} from "@radix-ui/themes"
+import {Table, Text} from "@radix-ui/themes"
 import MovieComponent from "./MovieComponent";
 import { useAppSelector } from "../../CustomHook/cutom-redux-hooks";
 
@@ -8,12 +8,13 @@ const SearchResultHeader = () => {
         <div className="table-container">
         <Table.Root 
         variant="surface"
+        className="custom-table"
         >
         <Table.Header
         
         >
-            <Table.Row>
-            <Table.ColumnHeaderCell>Title</Table.ColumnHeaderCell>
+            <Table.Row  className="custom-table__header_row">
+            <Table.ColumnHeaderCell >Title</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Genre</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Language</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Runtime</Table.ColumnHeaderCell>
@@ -31,6 +32,7 @@ const SearchResultHeader = () => {
             }
         </Table.Body>
         </Table.Root>
+       {(movies.length === 0) && <Text className="no-search-result">No search results</Text>}
         </div>
      );
 }
