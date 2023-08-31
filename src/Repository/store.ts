@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/react';
 import { configureStore, getDefaultMiddleware, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 
@@ -68,7 +67,6 @@ export const loadMovieSearchResults = (queryParams: SearchQuery) => async(dispat
        dispatch(initialiazeSearchResult(movies))
        dispatch(hideLoader())
     } catch (error) {
-        Sentry.captureException(error)
         dispatch(hideLoader())
     }
 }
