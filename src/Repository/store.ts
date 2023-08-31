@@ -1,7 +1,7 @@
 import { configureStore, getDefaultMiddleware, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 
-import MovieService from "../Adaptor/MovieService";
+import MovieService from "../Adaptor/MovieAdaptor";
 import { Movie, SearchQuery } from "../Service/DTOs";
 
 type MovieSliceProps = {

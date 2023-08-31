@@ -11,7 +11,6 @@ let dispatch: typeof Store.dispatch
 let getState: typeof Store.getState
 let searchResults: typeof sampleMovieResarchResponse = []
 const mockAdapter = new AxiosMockAdapter(axios)
-let url: RegExp
 const sampleMovieResarchResponse = [
     {
     Actors: ["Acor 1", "Actor 2"],
@@ -44,22 +43,32 @@ describe("App state", () => {
         })
         dispatch = store.dispatch
         getState = store.getState
-     url = new RegExp(`t=${sampleSearchQuery.title}&y=${sampleSearchQuery.year}&plot=${sampleSearchQuery.plot}`)
-        
     })
 
     it("Should populate app state with searched movie results", async() => {
-      mockAdapter.onGet(url).reply(200, sampleMovieResarchResponse)
+      mockAdapter.onGet("", {
+        params: {
+            t: sampleSearchQuery.title,
+            y: sampleSearchQuery.year,
+            plot: sampleSearchQuery.plot
+        }
+      }).reply(200, sampleMovieResarchResponse)
       await dispatch(loadMovieSearchResults(sampleSearchQuery) as unknown as AnyAction)
       searchResults = getState().movies.searchResults
       expect(searchResults.length).toBeGreaterThan(0)
-      console.log(getState().movies.searchResults);
       expect(searchResults).toEqual(sampleMovieResarchResponse)
     })
     
 
     it("Should not update app state when search return with an error", async() => {
-        mockAdapter.onGet(url).reply(400)
+        sampleSearchQuery.title = "Invalid Title"
+        mockAdapter.onGet("", {
+            params: {
+                t: sampleSearchQuery.title,
+                y: sampleSearchQuery.year,
+                plot: sampleSearchQuery.plot
+            }
+        }).reply(400)
         await dispatch(loadMovieSearchResults(sampleSearchQuery) as unknown as AnyAction)
         searchResults = getState().movies.searchResults
         expect(searchResults.length).toBe(0)
