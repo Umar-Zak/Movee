@@ -21,7 +21,7 @@ const HomePage = () => {
         size="9"
         highContrast
         >
-            Welcome to Movee
+            We Are  Movee
         </Heading>
         <Text 
         className="lightText tagline"

@@ -1,5 +1,5 @@
 import {Table, Text} from "@radix-ui/themes"
-import MovieComponent from "./MovieComponent";
+import MovieComponent from "./MovieRow";
 import { useAppSelector } from "../../CustomHook/cutom-redux-hooks";
 
 const SearchResultHeader = () => {
@@ -21,6 +21,7 @@ const SearchResultHeader = () => {
             <Table.ColumnHeaderCell>Released</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Writer(s)</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Rated</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
             </Table.Row>
         </Table.Header>
 

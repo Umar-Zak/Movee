@@ -1,5 +1,6 @@
 import {Table} from '@radix-ui/themes'
 import { Movie } from '../../Service/DTOs';
+import MovieDetails from './MovieDetails';
 
 const MovieComponent = (movie: Movie) => {
     return ( 
@@ -11,6 +12,9 @@ const MovieComponent = (movie: Movie) => {
             <Table.Cell>{movie.Released}</Table.Cell>
             <Table.Cell>{movie.Writer}</Table.Cell>
             <Table.Cell>{movie.Rated}</Table.Cell>
+            <Table.Cell>
+            <MovieDetails {...movie} />
+            </Table.Cell>
         </Table.Row> 
      );
 }

@@ -18,4 +18,6 @@ export interface Movie{
     Title: string
     Runtime: string
     Writer: string
+    Poster: string
+    Awards:  string
 }
