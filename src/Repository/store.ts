@@ -45,7 +45,7 @@ const uiSlice = createSlice({
     }
 })
 
-const reducer = combineReducers({
+export const reducer = combineReducers({
     movies: movieSlice.reducer,
     ui: uiSlice.reducer
 })

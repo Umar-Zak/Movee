@@ -25,3 +25,4 @@ export default class Https {
    protected put = axios.put
    protected patch = axios.patch
 }
+
