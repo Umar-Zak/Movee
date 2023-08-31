@@ -3,13 +3,14 @@
 ## Overview
 
 This app is a simple SPA to help users search the [OMDb API](https://www.omdbapi.com/) for movie
-details. A user can search by combination movie title, year the movie was released and the format
+details. A user can search by combination of movie title, year the movie was released and the format
 for the movie plot. Amongst these three parameters, kindly note that only the title is mandatory.
 
 ## Project Architecture
 
 This project is built on [React](https://react.dev/) with [Typescript](https://www.typescriptlang.org/) using some components of [Radix UI](https://www.radix-ui.com/) to compose components.
-This project also uses [Redux](https://redux.js.org/) for state management
+This project also uses [Redux](https://redux.js.org/) for state management. I have also made use of
+[Sentry](https://docs.sentry.io/) for error reporting and monitoring in this project.
 Everything else is from the usual [React](https://react.dev/) architecture.
 
 ## NB:
