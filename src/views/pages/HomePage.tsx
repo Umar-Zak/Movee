@@ -1,4 +1,4 @@
-import {Heading, Text, Box, Flex} from "@radix-ui/themes"
+import {Heading, Text, Box} from "@radix-ui/themes"
 import SearchForm from "../components/SearchForm"; 
 import SearchResultHeader from "../components/SearchResultTable"; 
 import {useAppSelector} from "../../CustomHook/cutom-redux-hooks";

@@ -5,7 +5,6 @@ import AppTextField from "./AppTextField";
 import AppSelectField from "./AppSelectField";
 import FormSubmitButton from "./FormSubmitButton";
 import { SearchQuery } from "../../Service/DTOs";
-import MovieService from "../../Adaptor/MovieService";
 import { useAppDispatch } from "../../CustomHook/cutom-redux-hooks";
 import { loadMovieSearchResults } from "../../Repository/store";
 import { AnyAction } from "redux";
@@ -22,7 +21,7 @@ const SearchForm = () => {
     const handleSubmitForm = (formFields: SearchQuery) => {
         dispatch(loadMovieSearchResults(formFields) as unknown as AnyAction)
     }
-    
+
     return (  
         <Formik
          initialValues={{
