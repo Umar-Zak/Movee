@@ -5,11 +5,11 @@ import Https from "./Https";
 class MovieService extends Https {
     
     
-    searchForMovie = async(queryParams: SearchQuery): Promise<[Movie]> => {
+    searchForMovie = async(queryParams: SearchQuery): Promise<Movie[]> => {
         let url = `t=${queryParams.title}&y=${queryParams.year}&plot=${queryParams.plot}`
         try {
             const {data}= await this.get<Movie>(url)
-            return [data]
+            return Array.isArray(data) ? data : [data] 
         } catch (error) {
             throw error
         }

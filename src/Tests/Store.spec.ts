@@ -2,7 +2,7 @@ import { AnyAction } from "redux";
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import  axios from "axios"
 import AxiosMockAdapter from "axios-mock-adapter"
-import {SearchQuery } from "../Service/DTOs";
+import {SearchQuery, Movie } from "../Service/DTOs";
 import Store, {loadMovieSearchResults, reducer} from "../Repository/store";
 
 
@@ -53,7 +53,8 @@ describe("App state", () => {
       await dispatch(loadMovieSearchResults(sampleSearchQuery) as unknown as AnyAction)
       searchResults = getState().movies.searchResults
       expect(searchResults.length).toBeGreaterThan(0)
-      expect(searchResults).toContainEqual(sampleMovieResarchResponse)
+      console.log(getState().movies.searchResults);
+      expect(searchResults).toEqual(sampleMovieResarchResponse)
     })
     
 
@@ -63,8 +64,6 @@ describe("App state", () => {
         searchResults = getState().movies.searchResults
         expect(searchResults.length).toBe(0)
     })
-  
-   
 })
 
 
