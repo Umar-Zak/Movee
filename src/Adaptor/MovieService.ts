@@ -6,10 +6,14 @@ class MovieService extends Https {
     
     
     searchForMovie = async(queryParams: SearchQuery): Promise<Movie[]> => {
-        let url = `t=${queryParams.title}&y=${queryParams.year}&plot=${queryParams.plot}`
         try {
-            const {data}= await this.get<Movie>(url)
-            return Array.isArray(data) ? data : [data] 
+            const resp= await this.get<Movie>("",{params: {
+                t: queryParams.title,
+                y:queryParams.year,
+                plot: queryParams.plot
+            }})
+            
+            return Array.isArray(resp.data) ? resp.data : [resp.data] 
         } catch (error) {
             throw error
         }

@@ -15,8 +15,10 @@ const movieSlice = createSlice({
     reducers: {
         initialiazeSearchResult: (state, action: PayloadAction<Movie[]>) => {
             state.searchResults = action.payload
-           
-            
+        },
+
+        resetSearchResult: (state) => {
+            state.searchResults = []
         }
     }
 })
@@ -67,12 +69,13 @@ export const loadMovieSearchResults = (queryParams: SearchQuery) => async(dispat
        dispatch(initialiazeSearchResult(movies))
        dispatch(hideLoader())
     } catch (error) {
+        dispatch(resetSearchResult())
         dispatch(hideLoader())
     }
 }
 
 
-export const {initialiazeSearchResult} = movieSlice.actions
+export const {initialiazeSearchResult, resetSearchResult} = movieSlice.actions
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
