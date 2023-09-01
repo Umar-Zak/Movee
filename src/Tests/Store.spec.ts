@@ -2,7 +2,7 @@ import { AnyAction } from "redux";
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import  axios from "axios"
 import AxiosMockAdapter from "axios-mock-adapter"
-import {SearchQuery, Movie } from "../Service/DTOs";
+import {SearchQuery} from "../Service/DTOs";
 import Store, {loadMovieSearchResults, reducer} from "../Repository/store";
 
 
@@ -33,7 +33,7 @@ const sampleSearchQuery: SearchQuery = {
 }
 
 describe("App state", () => {
-
+    // We want our store to have a clean state before each test runs.
     beforeEach(() => {
         store = configureStore({
             reducer,

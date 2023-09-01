@@ -9,6 +9,9 @@ axios.defaults.baseURL = process.env["REACT_APP_API_URL"]
 // to want to expand our app, we can always extend this code.
 axios.interceptors.response.use(data => {
     if(data.data["Error"])
+    // We don't need to log this promise rejection. The reason is because
+    // not getting search results is not technically an error but might be
+    // because the movie API hasn't got such movie.
       return Promise.reject(data)
     
       return Promise.resolve(data)

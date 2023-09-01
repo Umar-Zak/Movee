@@ -12,7 +12,6 @@ const HomePage = () => {
              <div className="custom-loader"></div>
             </div>
             }
-      
         <Box px="3">
         <Heading 
         className="lightText heading"
@@ -21,7 +20,7 @@ const HomePage = () => {
         size="9"
         highContrast
         >
-            We Are  Movee
+        We Are  Movee
         </Heading>
         <Text 
         className="lightText tagline"

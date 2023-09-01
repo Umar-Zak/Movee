@@ -1,5 +1,6 @@
 import {Formik} from "formik"
 import {Flex} from "@radix-ui/themes"
+import { AnyAction } from "redux";
 import * as Yup from "yup"
 import AppTextField from "./AppTextField";
 import AppSelectField from "./AppSelectField";
@@ -7,11 +8,11 @@ import FormSubmitButton from "./FormSubmitButton";
 import { SearchQuery } from "../../Service/DTOs";
 import { useAppDispatch } from "../../CustomHook/cutom-redux-hooks";
 import { loadMovieSearchResults } from "../../Repository/store";
-import { AnyAction } from "redux";
+
 
 const formValidationSchema = Yup.object().shape({
     title: Yup.string().required().label("Movie title"),
-    year: Yup.string().matches(/[0-9]{4}/, "Movie must be a valid year").label("Movie year"),
+    year: Yup.string().matches(/[0-9]{4}/, "Movie year must be a valid year").label("Movie year"),
     plot: Yup.string().label("Movie plot format")
 })
 

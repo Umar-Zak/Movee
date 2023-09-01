@@ -10,9 +10,7 @@ const SearchResultHeader = () => {
         variant="surface"
         className="custom-table"
         >
-        <Table.Header
-        
-        >
+        <Table.Header>
             <Table.Row  className="custom-table__header_row">
             <Table.ColumnHeaderCell >Title</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Genre</Table.ColumnHeaderCell>
@@ -24,7 +22,6 @@ const SearchResultHeader = () => {
             <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
             </Table.Row>
         </Table.Header>
-
         <Table.Body>
             {
                 movies.map((movie, index) => (

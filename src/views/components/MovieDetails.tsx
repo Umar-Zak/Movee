@@ -3,11 +3,10 @@ import { Movie } from "../../Service/DTOs";
 
 const MovieDetails = (movie: Movie) => {
     return (  
-        <Dialog.Root>
+  <Dialog.Root>
   <Dialog.Trigger>
     <Button>View</Button>
   </Dialog.Trigger>
-
   <Dialog.Content style={{ maxWidth: 450 }}>
     <Dialog.Title>{movie.Title}</Dialog.Title>
     <Dialog.Description size="2" mb="4">

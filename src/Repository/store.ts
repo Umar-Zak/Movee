@@ -1,4 +1,5 @@
-import { configureStore, getDefaultMiddleware, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware, createSlice, PayloadAction } 
+from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 
 import MovieService from "../Adaptor/MovieAdaptor";
@@ -17,13 +18,13 @@ const movieSlice = createSlice({
             state.searchResults = action.payload
         },
 
-        resetSearchResult: (state) => {
+        resetSearchResults: (state) => {
             state.searchResults = []
         }
     }
 })
 
-// In a large scale project where there are many global ui
+// In a large scale project(when this grows bigger) where there are many global ui
 // states, this will probably have to get its own separate
 //file. For now, I think we are good to go.
 
@@ -62,20 +63,21 @@ const store = configureStore({
 
 const {hideLoader, showLoader} = uiSlice.actions
 
-export const loadMovieSearchResults = (queryParams: SearchQuery) => async(dispatch: AppDispatch ,getState: () => RootState, ) => {
+export const loadMovieSearchResults = (queryParams: SearchQuery) => 
+async(dispatch: AppDispatch) => {
     try {
        dispatch(showLoader())
        const movies = await MovieService.searchForMovie(queryParams)
        dispatch(initialiazeSearchResult(movies))
        dispatch(hideLoader())
     } catch (error) {
-        dispatch(resetSearchResult())
+        dispatch(resetSearchResults())
         dispatch(hideLoader())
     }
 }
 
 
-export const {initialiazeSearchResult, resetSearchResult} = movieSlice.actions
+export const {initialiazeSearchResult, resetSearchResults} = movieSlice.actions
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
